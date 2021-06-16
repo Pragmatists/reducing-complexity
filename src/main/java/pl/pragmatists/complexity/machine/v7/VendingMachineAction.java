@@ -8,7 +8,7 @@ public enum VendingMachineAction {
     SELL_JUICE_BOX(2, VendingMachine::sellJuiceBox),
     RETURN_COINS(0, VendingMachine::returnCoins),
     CALL_SERVICE(100, new ReportIssueStrategy()),
-    UNAVAILABLE(Integer.MIN_VALUE, vm -> vm.display("Choice unavailable."));
+    UNAVAILABLE(Integer.MIN_VALUE, vm -> vm.display("Choice unavailable"));
 
     private final int choiceNumber;
     private final Consumer<VendingMachine> action;

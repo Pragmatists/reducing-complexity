@@ -1,5 +1,7 @@
 package pl.pragmatists.complexity.machine.v2;
 
+import pl.pragmatists.complexity.machine.common.MachineDisplay;
+
 public class VendingMachine {
     private static final int CHOCO_BAR_PRICE = 5;
     private static final int JUICE_BOX_PRICE = 7;
@@ -62,6 +64,7 @@ public class VendingMachine {
 
     public void returnCoins() {
         display(String.format("Returned %d coin(s)", coinBalance));
+        coinBalance = 0;
     }
 
     public boolean isChocoBarAvailable() {
@@ -73,7 +76,7 @@ public class VendingMachine {
     }
 
     private void display(String message) {
-        System.out.println(message);
+        machineDisplay.display(message);
     }
 
     private boolean available(VendingMachineAction vendingMachineAction) {
@@ -94,5 +97,15 @@ public class VendingMachine {
 
     public int getCoinBalance() {
         return coinBalance;
+    }
+
+    private final MachineDisplay machineDisplay;
+
+    public VendingMachine() {
+        this(new MachineDisplay());
+    }
+
+    public VendingMachine(MachineDisplay machineDisplay) {
+        this.machineDisplay = machineDisplay;
     }
 }

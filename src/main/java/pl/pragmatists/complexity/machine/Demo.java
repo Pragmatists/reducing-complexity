@@ -1,5 +1,6 @@
 package pl.pragmatists.complexity.machine;
 
+// switch the package here to use different implementations
 import pl.pragmatists.complexity.machine.v7.VendingMachine;
 
 public class Demo {
